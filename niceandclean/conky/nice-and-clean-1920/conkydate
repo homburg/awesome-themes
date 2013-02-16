@@ -24,8 +24,8 @@ gap_y 415
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
-override_utf8_locale no
+override_utf8_locale yes
 
 TEXT
-${color ce2c51}${time %d} ${color ffffff}${time %B}
+${color ce2c51}${time %d}. ${color ffffff}${time %B}
 ${time %A}

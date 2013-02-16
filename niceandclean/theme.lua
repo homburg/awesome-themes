@@ -20,15 +20,18 @@ if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
 end
 themedir = themes .. themename
 
-wallpaper1    = themedir .. "/background.jpg"
+wallpaper1    = themedir .. "/background-large.jpg"
 wallpaper2    = themedir .. "/background.png"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 wpscript2     = themedir .. "/niceandclean.sh"
+wpscriptparams = " 1920"
 
+-- naughty.notify({text = wpscript2})
 if awful.util.file_readable(wpscript2) then
-	theme.wallpaper_cmd = { "sh " .. wpscript2 }
+	-- naughty.notify({text = wpscript2 .. " - Readable!"})
+	theme.wallpaper_cmd = { "sh " .. wpscript2 .. wpscriptparams }
 elseif awful.util.file_readable(wallpaper1) then
 	theme.wallpaper_cmd = { "awsetbg " .. wallpaper1 }
 elseif awful.util.file_readable(wallpaper2) then
